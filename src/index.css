@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ── */
+* { padding: 0; margin: 0; box-sizing: border-box; }
+body { font-family: 'Almarai', sans-serif; }
+img { width: 100%; }
+
+/* ── Section title with red right-bar ── */
+.section-title {
+  color: #000;
+  line-height: 50px;
+  position: relative;
+  margin-right: 30px;
+  margin-bottom: 40px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 100%;
+  top: 0;
+  right: -30px;
+  background-color: #B80000;
+}
+.section-title.light { color: #fff; }
+
+/* ── Navbar shrink on scroll ── */
+.navbar-small { padding: 0 !important; transition: all .5s; }
+
+/* ── Navbar login hover dropdown ── */
+.login-hover { position: relative; }
+.login-hover .login-dropdown {
+  position: absolute;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #B1AEAE;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  top: 50px;
+  right: -115px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s;
+  z-index: 100;
+}
+.login-hover .login-dropdown::after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  transform: rotate(45deg) translateX(50%);
+  top: -18px;
+  right: 50%;
+  border-top: 1px solid #B1AEAE;
+  border-left: 1px solid #B1AEAE;
+}
+.login-hover:hover .login-dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ── Header hero carousel ── */
+.carousel-news {
+  margin-top: 50px;
+  position: relative;
+}
+.carousel-news::after {
+  position: absolute;
+  content: '';
+  left: -10px;
+  top: 150px;
+  height: 200px;
+  width: 20px;
+  background-color: #B80000;
+}
+.carousel-text {
+  padding: 20px 10px 70px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+.carousel-text h3 {
+  font-size: 22px;
+  position: relative;
+}
+.carousel-text h3::after {
+  content: '';
+  position: absolute;
+  height: 85px;
+  width: 5px;
+  background-color: #B80000;
+  top: -10px;
+  left: 250px;
+}
+.carousel-item img { max-height: 490px; object-fit: cover; }
+.carousel-indicators button {
+  height: 20px;
+  width: 20px;
+  text-indent: 0;
+  background-color: #B80000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 0 4px;
+}
+.carousel-indicators button.active { opacity: 1; }
+
+/* ── Shared button ── */
+.btn-main {
+  background-color: #B80000;
+  color: #fff;
+  border: 1px solid #B80000;
+  padding: 2px 30px;
+  border-radius: 5px;
+  transition: all .5s;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-main:hover { background-color: #fff; color: #B80000; }
+
+/* Login page button (inverted) */
+.btn-inverted {
+  background-color: #fff;
+  color: #B80000;
+  border: 1px solid #B80000;
+  padding: 2px 30px;
+  border-radius: 5px;
+  transition: all .5s;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-inverted:hover { background-color: #B80000; color: #fff; }
+
+/* ── Most-read card-img red bar ── */
+.card-img-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+.card-img-wrap::after {
+  content: '';
+  position: absolute;
+  background-color: #B80000;
+  height: 30px;
+  width: 250px;
+  bottom: -15px;
+  right: 80px;
+}
+
+/* ── Opinions card user avatar circle ── */
+.opinions-card .user-info img {
+  width: 100px;
+  clip-path: circle();
+}
+
+/* ── Article datetime red left bar ── */
+.article-datetime {
+  font-size: 20px;
+  padding: 10px 0;
+  background-color: rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  position: relative;
+}
+.article-datetime time { margin-right: 25px; }
+.article-datetime::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #B80000;
+}
+
+/* ── Comment speech-bubble ── */
+.comment-text {
+  padding: 20px;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 15px;
+  margin-right: -15px;
+}
+.comment-text::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 15px;
+  right: -10px;
+  transform: rotate(45deg);
+  background-color: #F0F0F0;
+}
+
+/* ── Most-read article sidebar (article page) ── */
+.most-read-article { position: relative; margin-top: 25px; }
+.most-read-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+}
+.most-read-text h4 { font-size: 22px; color: #fff; }
+
+/* ── Footer title red underline ── */
+.footer-title {
+  margin-bottom: 30px;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background-color: #B80000;
+  right: 0;
+  bottom: -15px;
+}
+
+/* ── Swiper overrides ── */
+.swiper { width: 100%; height: 100%; padding: 20px 0 50px !important; }
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  background-color: #B1AEAE !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 10px !important;
+}
+.swiper-pagination { bottom: -5px !important; }
+
+/* ── Most-read line-clamp ── */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Search article paragraph line-clamp ── */
+.search-p-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 1400px) {
+  .carousel-text h3 { font-size: 18px; }
+  .carousel-text h3::after { left: 280px; }
+}
+@media (max-width: 1200px) {
+  .carousel-text h3::after { left: 340px; }
+  .carousel-news::after { height: 170px; top: 100px; }
+  .most-read-text h4 { font-size: 16px; }
+}
+@media (max-width: 992px) {
+  .carousel-text h3::after { display: none; }
+  .carousel-news::after { display: none; }
+  .swiper-pagination-bullet { width: 15px !important; height: 15px !important; }
+}
+@media (max-width: 768px) {
+  .carousel-news::after { display: none; }
+  .card-img-wrap::after { display: none; }
+  .footer-title::after { display: none; }
+  .footer-title { color: #B80000; margin-top: 20px; }
+  footer { text-align: center; }
+  .most-read-text h4 { font-size: 14px; }
+}
+@media (max-width: 575px) {
+  .article-datetime { padding: 5px; }
+  .article-datetime time { font-size: 16px; }
+}
